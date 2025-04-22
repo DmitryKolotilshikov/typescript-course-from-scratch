@@ -1,0 +1,23 @@
+{
+  "name": "typescript-course",
+  "version": "1.0.0",
+  "description": "TypeScript Course",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "watch": "tsc -w index.ts",
+    "build": "tsc",
+    "01-module": "ts-node 01-introduction-setup/03-first-ts.ts",
+    "02-module": "ts-node 02-basic-types/03-enums.ts",
+    "03-module": "ts-node 03-functions/01-function-types.ts",
+    "04-module": "ts-node 04-objects/01-objects.ts",
+    "05-module": "ts-node 05-generics/03-higher-order-generics.ts",
+    "06-module": "ts-node 06-namespaces-decorators/01-namespaces.ts",
+    "07-module": "ts-node 07-namespaces-decorators/02-decorators.ts",
+    "08-module": "ts-node 08-dom-types/03-fetch.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "ts-node": "^10.9.0"
+  }
+} 
