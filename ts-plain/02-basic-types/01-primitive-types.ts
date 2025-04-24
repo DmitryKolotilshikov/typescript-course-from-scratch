@@ -2,22 +2,22 @@
 // =====================================
 
 // Number type
-let age: number = 30; 
-let price: number = 19.99; 
+const age: number = 30; 
+const price: number = 19.99; 
 
 // String type
-let firstName: string = "Alice"; 
-let helloMessage: string = `Hello, ${firstName}!`;
+const firstName: string = "Alice"; 
+const helloMessage: string = `Hello, ${firstName}!`;
 
 // Boolean type
-let isAvailable: boolean = true;
-let hasPermission: boolean = false;
+const isAvailable: boolean = true;
+const hasPermission: boolean = false;
 
 // Null type
-let emptyValue: null = null;
+const emptyValue: null = null;
 
 // Undefined type
-let notDefined: undefined = undefined;
+const notDefined: undefined = undefined;
 
 // Примеры ошибок типизации
 // age = "25";
