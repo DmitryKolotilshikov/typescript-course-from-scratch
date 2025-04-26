@@ -7,18 +7,18 @@ Utility Types в TypeScript предоставляют полезные инст
 
 // 1. Partial<Type>
 // Создает новый тип, в котором все свойства Type являются необязательными.
-interface User {
+interface IUser {
     id: number;
     name: string;
     age: number;
 }
 
-const partialUser: Partial<User> = {}; // Валидно: все свойства необязательные
-const partialUser2: Partial<User> = { name: "Вася" };
+const partialUser: Partial<IUser> = {}; // Валидно: все свойства необязательные
+const partialUser2: Partial<IUser> = { name: "Вася" };
 
 // 2. Readonly<Type>
 // Создает новый тип, в котором все свойства Type являются только для чтения.
-const user: Readonly<User> = {
+const user: Readonly<IUser> = {
     id: 1,
     name: "Alice",
     age: 25,
@@ -40,7 +40,7 @@ console.log(rolePermissions.admin); // Output: ["read", "write", "delete"]
 
 // 4. Pick<Type, Keys>
 // Создает новый тип, выбирая набор свойств Keys из Type.
-type UserPreview = Pick<User, "id" | "name">;
+type UserPreview = Pick<IUser, "id" | "name">;
 
 const preview: UserPreview = {
     id: 1,
@@ -50,7 +50,7 @@ const preview: UserPreview = {
 
 // 5. Omit<Type, Keys>
 // Создает новый тип, исключая набор свойств Keys из Type.
-type UserWithoutAge = Omit<User, "age">;
+type UserWithoutAge = Omit<IUser, "age">;
 
 const userWithoutAge: UserWithoutAge = {
     id: 1,

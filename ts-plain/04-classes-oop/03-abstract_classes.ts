@@ -11,12 +11,12 @@ abstract class Shape {
   }
   
 // Интерфейс с дополнительными свойствами для круга
-interface CircleProperties {
+interface ICircleProperties {
     radius: number;
 }
   
 // Класс, наследующий от абстрактного класса и реализующий интерфейс
-class Circle extends Shape implements CircleProperties {
+class Circle extends Shape implements ICircleProperties {
     radius: number;
 
     constructor(radius: number) {
@@ -31,13 +31,13 @@ class Circle extends Shape implements CircleProperties {
 }
   
 // Интерфейс с дополнительными свойствами для прямоугольника 
-interface RectangleProperties {
+interface IRectangleProperties {
     width: number;
     height: number;
 }
 
 // Класс Прямоугольник, наследующий от абстрактного класса и реализующий интерфейс
-class Rectangle extends Shape implements RectangleProperties {
+class Rectangle extends Shape implements IRectangleProperties {
     width: number;
     height: number;
 

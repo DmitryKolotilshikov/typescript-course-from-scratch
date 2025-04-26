@@ -4,7 +4,7 @@
 // Интерфейсы и Типы определяют структуру объекта и могут включать свойства, методы и индексы.
 
 // Интерфейс для описания структуры объекта пользователя
-interface UserInterface {
+interface IUserInterface {
     name: string;
     age: number;
     email: string;
@@ -13,7 +13,7 @@ interface UserInterface {
 }
 
 // Реализация интерфейса
-const user1: UserInterface = {
+const user1: IUserInterface = {
     name: "Alice",
     age: 30,
     email: "alice@example.com",
@@ -50,7 +50,7 @@ console.log(user2.greet()); // Hello, my name is Nik
 // 2. Интерфейсы более предпочтительны для описания структуры объектов, а типы более универсальны и могут описывать объединения, пересечения и примитивы.
 // 3. Интерфейсы могут быть повторно открыты для добавления новых свойств, а типы — нет.
 // ====================================================
-interface ExtendedUserInterface extends UserInterface {
+interface IExtendedUserInterface extends IUserInterface {
     role: string;
 }
 // interface ExtendedUserInterface {
@@ -58,7 +58,7 @@ interface ExtendedUserInterface extends UserInterface {
 //     role2: string;
 // }
 
-const user3: ExtendedUserInterface = {
+const user3: IExtendedUserInterface = {
     name: "Alex",
     age: 28,
     email: "alex@example.com",

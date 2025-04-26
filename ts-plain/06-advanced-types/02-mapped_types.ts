@@ -7,7 +7,7 @@ Mapped Types позволяют создавать новые типы, изме
 */
 
 // 1. Пример использования Mapped Types для создания типа с необязательными свойствами
-interface Person {
+interface IPerson {
     name: string;
     age: number;
     address: string;
@@ -15,18 +15,18 @@ interface Person {
 
 // Создаем новый тип, в котором все свойства Person являются необязательными
 type PartialPerson = {
-    [P in keyof Person]?: Person[P];
+    [P in keyof IPerson]?: IPerson[P];
 };
 
 const partialPerson1: PartialPerson = { name: "Серега" }; // Валидно: все свойства необязательные
 
 // Partial уже готовый тип, который делает все свойства необязательными
-const partialPerson2: Partial<Person> = { name: "Игорек" };
+const partialPerson2: Partial<IPerson> = { name: "Игорек" };
 
 
 // 2. Пример использования Mapped Types для создания типа с только для чтения свойствами
 type ReadonlyPerson = {
-    readonly [P in keyof Person]: Person[P];
+    readonly [P in keyof IPerson]: IPerson[P];
 };
 
 const readonlyPerson: ReadonlyPerson = {
@@ -39,7 +39,7 @@ const readonlyPerson: ReadonlyPerson = {
 
 // 3. Пример использования Mapped Types для создания типа с измененными типами свойств
 type StringifiedPerson = {
-    [P in keyof Person]: string;
+    [P in keyof IPerson]: string;
 };
 
 const stringifiedPerson: StringifiedPerson = {
@@ -50,7 +50,7 @@ const stringifiedPerson: StringifiedPerson = {
 
 // 4. Пример использования Mapped Types для создания типа с удаленными свойствами
 type PersonWithoutAddress = {
-    [P in keyof Person as Exclude<P, "address">]: Person[P];
+    [P in keyof IPerson as Exclude<P, "address">]: IPerson[P];
 };
 
 const personWithoutAddress: PersonWithoutAddress = {

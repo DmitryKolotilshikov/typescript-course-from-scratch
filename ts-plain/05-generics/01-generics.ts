@@ -2,12 +2,12 @@
 // Generics
 // Дженерики (generics) в TypeScript — это способ писать универсальный код, 
 // который работает с разными типами, но при этом остаётся типобезопасным
-interface Box<T> {
+interface IBox<T> {
     value: T;
 }
 
-const numberBox: Box<number> = { value: 123 };
-const stringBox: Box<string> = { value: 'TypeScript' };
+const numberBox: IBox<number> = { value: 123 };
+const stringBox: IBox<string> = { value: 'TypeScript' };
 
 // =============================
 type Pair<T, U> = {

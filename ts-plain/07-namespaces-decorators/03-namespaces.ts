@@ -37,10 +37,10 @@ const difference = MathUtils.subtract(5, 3); // difference = 2
 //         price: number;
 //     }
 // }
-// import { User, Product } from "./models-namespace";
+// import { IUser, IProduct } from "./models-namespace";
 
-const _user: Models.User = { id: 1, name: "Alice" };
-const product: Models.Product = { id: 1, name: "Laptop", price: 1200 };
+const _user: Models.IUser = { id: 1, name: "Alice" };
+const product: Models.IProduct = { id: 1, name: "Laptop", price: 1200 };
 
 // 3. Пример использования Namespace для организации классов
 namespace Geometry {

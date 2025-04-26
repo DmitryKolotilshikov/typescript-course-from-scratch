@@ -1,10 +1,10 @@
 namespace Models {
-    export interface User {
+    export interface IUser {
         id: number;
         name: string;
     }
 
-    export interface Product {
+    export interface IProduct {
         id: number;
         name: string;
         price: number;
@@ -14,11 +14,11 @@ namespace Models {
 /* 
 лучше использовать ES-модули (import/export):
 
-export interface User {
+export interface IUser {
     id: number;
     name: string;
 }
-export interface Product {
+export interface IProduct {
     id: number;
     name: string;
     price: number;

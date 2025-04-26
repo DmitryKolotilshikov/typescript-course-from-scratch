@@ -29,23 +29,23 @@ console.log(stringifiedNumbers); // Result: ["1", "2", "3", "4", "5"]
 
 // ------------------------------------------------------------
 // 2. Mapping объектов к конкретным свойствам:
-interface Product {
+interface IProduct {
   id: number;
   name: string;
   price: number;
 }
 
-const products: Product[] = [
+const products: IProduct[] = [
   { id: 1, name: "Laptop", price: 1200 },
   { id: 2, name: "Mouse", price: 25 },
   { id: 3, name: "Keyboard", price: 75 },
 ];
 
-const extractProductName: Mapper<Product, string> = (product) => product.name;
+const extractProductName: Mapper<IProduct, string> = (product) => product.name;
 const productNames = transformArray(products, extractProductName);
 console.log(productNames); // Result: ["Laptop", "Mouse", "Keyboard"]
 
-const extractProductId: Mapper<Product, number> = (product) => product.id;
+const extractProductId: Mapper<IProduct, number> = (product) => product.id;
 const productIds = transformArray(products, extractProductId);
 console.log(productIds); // Result: [1, 2, 3]
 }

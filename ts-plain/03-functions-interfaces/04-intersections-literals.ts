@@ -3,15 +3,15 @@
 // обладает всеми свойствами объединенных типов
 // Он обозначается символом амперсанда (&)
 
-interface Name {
+interface IName {
     name: string;
   }
   
-interface Age {
+interface IAge {
   age: number;
 }
 
-type Person = Name & Age;  // Person должен иметь оба свойства name и age
+type Person = IName & IAge;  // Person должен иметь оба свойства name и age
 
 const person: Person = {
   name: "Alice",
@@ -24,7 +24,7 @@ console.log(person.name, person.age); // Валидно
 
 // =======================================
 // Использование пересечения типов с существующими объектами:
-interface Address {
+interface IAddress {
   street: string;
   city: string;
 }
@@ -34,7 +34,7 @@ const user = {
   name: "Вася",
 };
 
-type UserWithAddress = typeof user & Address;
+type UserWithAddress = typeof user & IAddress;
 
 const userWithAddress: UserWithAddress = {
   ...user,
