@@ -1,10 +1,12 @@
 // 2. Класс с модификаторами доступа
 class BankAccount {
+    readonly id: number; // Доступно только для чтения и может устанавливаться в конструкторе
     public accountNumber: string; // Доступно из любого места
     private balance: number; // Доступно только внутри класса
     protected owner: string; // Доступно внутри класса и производных классов
 
-    constructor(accountNumber: string, owner: string) {
+    constructor(id: number, accountNumber: string, owner: string) {
+        this.id = id;
         this.accountNumber = accountNumber;
         this.balance = 0;
         this.owner = owner;
@@ -30,9 +32,10 @@ class BankAccount {
     }
 }
 
-const account = new BankAccount("1234567890", "Петр Иванов");
+const account = new BankAccount(123, "1234567890", "Петр Иванов");
 account.deposit(1000);
 console.log(account.getBalance()); // 1000
 account.withdraw(500);
 console.log(account.getBalance()); // 500
+// console.log(account.owner); // Ошибка: свойство 'owner' доступно только внутри класса и его наследниках
 // console.log(account.balance); // Ошибка: свойство 'balance' является приватным

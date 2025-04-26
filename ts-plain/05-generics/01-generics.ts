@@ -1,53 +1,22 @@
-// Generic Functions (Универсальные функции)
-
-/* 
-Дженерик позволяет вам написать функцию, которая может работать с разными типами 
-без необходимости писать отдельные функции для каждого типа.
-
-Параметры типа указываются с помощью угловых скобок <T> после имени функции.
-*/
-
-// Универсальная функция, которая возвращает первый элемент массива
-function getFirstElement<T>(arr: T[]): T {
-    return arr[0];
+{
+// Generics
+// Дженерики (generics) в TypeScript — это способ писать универсальный код, 
+// который работает с разными типами, но при этом остаётся типобезопасным
+interface Box<T> {
+    value: T;
 }
 
-// Использование универсальной функции с разными типами
-const numbersArray: number[] = [1, 2, 3];
-const firstNumber = getFirstElement(numbersArray); // firstNumber имеет тип "число" (inferred)
-console.log(firstNumber); // Output: 1
+const numberBox: Box<number> = { value: 123 };
+const stringBox: Box<string> = { value: 'TypeScript' };
 
-const strings: string[] = ["hello", "world"];
-const firstString = getFirstElement(strings); // firstString имеет тип "строка" (inferred)
-console.log(firstString); // Output: "hello"
+// =============================
+type Pair<T, U> = {
+    first: T;
+    second: U;
+};
 
-// ------------------------------------------------------------
-// Универсальные классы позволяют создавать классы, которые могут работать с разными типами.
-// Параметры типа указываются с помощью угловых скобок <T> после имени класса.
-
-// Универсальный класс, который хранит значение определенного типа
-class Box<T> {
-    private value: T;
-
-    constructor(value: T) {
-        this.value = value;
-    }
-
-    getValue(): T {
-        return this.value;
-    }
+const pair: Pair<string, number> = {
+    first: 'age',
+    second: 30
+};
 }
-
-const numberBox = new Box<number>(10);
-console.log(numberBox.getValue()); // Output: 10
-
-const stringBox = new Box<string>("Typescript");
-console.log(stringBox.getValue()); // Output: "Typescript"
-
-// ------------------------------------------------------------
-// Преимущества универсальных типов:
-
-// 1. Code Reusability:  Возможность повторного использования кода.
-// 2. Type Safety:  Дженерики обеспечивают проверку типов во время компиляции, предотвращая ошибки во время выполнения.
-// 3. Flexibility:  Работа с различными типами данных.
-// 4. Readability:  Дженерики часто чище и проще для понимания по сравнению с использованием `any`.

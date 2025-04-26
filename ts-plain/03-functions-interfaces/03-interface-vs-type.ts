@@ -44,11 +44,12 @@ const user2: UserType = {
 
 console.log(user2.greet()); // Hello, my name is Nik
 
+// ====================================================
 // Различия между интерфейсами и типами:
 // 1. Интерфейсы могут расширяться друг от друга или от классов, а типы могут объединяться с помощью оператора &.
-// 2. Интерфейсы более предпочтительны для описания структуры объектов, в то время как типы более универсальны и могут описывать объединения, пересечения и примитивы.
+// 2. Интерфейсы более предпочтительны для описания структуры объектов, а типы более универсальны и могут описывать объединения, пересечения и примитивы.
 // 3. Интерфейсы могут быть повторно открыты для добавления новых свойств, а типы — нет.
-
+// ====================================================
 interface ExtendedUserInterface extends UserInterface {
     role: string;
 }
@@ -69,19 +70,3 @@ const user3: ExtendedUserInterface = {
 };
 
 console.log(user3.greet()); // Hello, my name is Alex and I am an admin
-
-type ExtendedUserType = UserType & {
-    role: string;
-};
-
-const user4: ExtendedUserType = {
-    name: "Daria",
-    age: 35,
-    email: "daria@example.com",
-    role: "user",
-    greet() {
-        return `Hello, my name is ${this.name} and I am a ${this.role}`;
-    }
-};
-
-console.log(user4.greet()); // Hello, my name is Daria and I am a user
