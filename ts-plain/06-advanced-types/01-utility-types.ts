@@ -41,6 +41,7 @@ console.log(rolePermissions.admin); // Output: ["read", "write", "delete"]
 // 4. Pick<Type, Keys>
 // Создает новый тип, выбирая набор свойств Keys из Type.
 type UserPreview = Pick<IUser, "id" | "name">;
+// interface IUserPreview extends Pick<IUser, "id" | "name"> {}
 
 const preview: UserPreview = {
     id: 1,

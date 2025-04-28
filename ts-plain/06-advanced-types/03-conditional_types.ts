@@ -6,31 +6,20 @@ Conditional Types позволяют создавать типы, которые
 Они полезны для создания более гибких и адаптивных определений типов.
 */
 
-// 1. Пример использования Conditional Types для проверки типа
+// 1. Conditional Types для проверки типа
 type IsString<T> = T extends string ? true : false;
 
 type A = IsString<'hello'>;    // type A = true
 type B = IsString<number>;     // type B = false
 
-// 2. Пример использования Conditional Types для фильтрации типов
+// 2. Conditional Types для фильтрации типов
 
 type FilterStrings<T> = T extends string ? T : never;
 
 type MixedTypes = 'a' | 1 | 'b' | 2 | 'c';
 type OnlyStrings = FilterStrings<MixedTypes>; // type OnlyStrings = "a" | "b" | "c"
 
-// 3. Практический пример: Получение типа элемента массива
-
-type ElementType<T> = T extends (infer U)[] ? U : T;
-
-type NumberArray = number[];
-type NumberType = ElementType<NumberArray>; // NumberType будет number
-
-type NotAnArray = string;
-type NotAnArrayType = ElementType<NotAnArray>; // NotAnArrayType будет строка (потому что не соответствует шаблону массива)
-}
-
-// 4. Практический пример: Извлечение типа возвращаемого значения функции
+// 3. Извлечение типа возвращаемого значения функции
 
 type ReturnTypeOf<T> = T extends (...args: any[]) => infer R ? R : never;
 
@@ -44,4 +33,4 @@ function getNumber(): number {
 
 type StringReturnType = ReturnTypeOf<typeof getString>; // StringReturnType будет string
 type NumberReturnType = ReturnTypeOf<typeof getNumber>; // NumberReturnType будет number
-
+}
