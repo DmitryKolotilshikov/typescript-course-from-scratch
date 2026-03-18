@@ -11,7 +11,7 @@
 const someValue: any = "This is a string";
 const stringLength: number = (<string>someValue).length;
 
-console.log(`stringLength: ${strLength}`);
+console.log(`stringLength: ${stringLength}`);
 
 // 2. `as` синтаксис (предпочтительный синтаксис, совместимый с JSX/TSX):
 const someValue1: any = "This is a string";
